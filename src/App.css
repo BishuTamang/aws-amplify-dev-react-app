@@ -1,3 +1,13 @@
+body {
+  margin: 0px;
+  width: 100vw;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow-x:hidden;
+
+  
+}
+
 .App {
   text-align: center;
 }
@@ -12,6 +22,14 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+body {
+  font-family: 'Poppins', sans-serif;
+}
+a.text-decoration-none:hover {
+  text-decoration: underline;
+  color: #f8c146; /* Accent color */
+}
+
 
 .App-header {
   background-color: #282c34;
@@ -34,5 +52,58 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* App.css */
+
+/* Navbar styling */
+.navbar {
+  font-family: Arial, sans-serif;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+/* Search Bar */
+.search-container {
+  flex-grow: 1;
+}
+
+.form-control {
+  width: 100%;
+}
+
+/* Cart button */
+.btn-outline-dark {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-outline-dark:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* User Profile Section */
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile .user-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.user-profile img {
+  border-radius: 50%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .search-container {
+    width: 100%;  /* Make the search bar take full width on smaller screens */
   }
 }

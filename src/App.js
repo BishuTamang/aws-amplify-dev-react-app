@@ -1,24 +1,44 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import './index.css';
+import NavBar from './Component/nav.js';
+import Sliders from './Component/sliders.js';
+import Cards from './Component/cards.js';
+import Aboutus from './Component/aboutus.js';
+import Activities from './Component/activities.js';
+import Gallery from './Component/gallery.js';
+import Form from './Component/form.js';
+import Footer from './Component/footer.js';
+import ProductDetailPage from './Component/pages/ProductDetailPage'; // Ensure the correct path
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        {/* Home page route */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Sliders />
+              <Cards />
+              <Aboutus />
+              <Activities />
+              <Gallery />
+              <Form />
+            </>
+          }
+        />
+        
+        {/* Product Detail Page Route */}
+        <Route path="/product/:id" element={<ProductDetailPage />} />
+        
+        {/* Add more routes as needed */}
+      </Routes>
+      <Footer /> {/* Keep the Footer visible on all pages */}
+    </Router>
   );
 }
 
